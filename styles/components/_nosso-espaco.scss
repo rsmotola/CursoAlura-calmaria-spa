@@ -1,33 +1,30 @@
-@use '../abstract/variaveis';
-@use '../abstract/mixins';
-#nosso-espaco{
-    @include mixins.margem-central(80%);
-    .detalhes{
+@import '../abstract/variaveis';
+@import '../abstract/mixins';
+
+#nosso-espaco {
+    @include central-margin;
+    .details-inner{
         width: 100%;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: space-around;
-        gap: 2rem;
-        padding: 2rem 0;
-        .imgs-espaco{
-            max-width: 500px;
+        img{
+           height: 320px;
+           margin: 1rem;
         }
         .espaco-textos{
-            @extend .imgs-espaco;
-            .titulo{
-                @include mixins.ff-fs-cl(variaveis.$ft-titulos, 1.8rem, variaveis.$cor-secundaria);
-                font-weight: 500;
+            padding: 1rem;
+            max-width: 700px;
+            .title{
+                @include title(31px, $roxo-vibrante);
             }
             .infos{
-                @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.2rem, variaveis.$cor-primaria);
+                @include paragraph(22px);
+                margin: 1rem 0;
             }
-            .separador{
+            object{
                 width: 100%;
             }
         }
-        &:nth-child(2){
-            flex-direction: row-reverse;
-        }
-        
     }
 }

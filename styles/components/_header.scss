@@ -1,81 +1,70 @@
-@use '../abstract/variaveis';
-@use '../abstract/mixins';
+@import '../abstract/variaveis';
+// Header 
 
 header {
-    background: variaveis.$gradiente-primario;
-    padding: 2rem;
+    background: $verde-gradiente;
+    padding: 1rem;
 
     nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.6rem;
+        row-gap: 1rem;
+        margin: 1rem;
+        img {
+            width: 270px;
+            height: 88px;
+        }
 
-        .linha {
-            border-top: 1px solid black;
+        .line {
             width: 80%;
+            border-bottom: 1px solid #000;
         }
 
         ul {
             display: inline-flex;
-            gap: 2rem;
-
-            li {
-                list-style-type: none;
-            }
+            list-style: none;
 
             a {
+                color: $roxo-escuro;
+                margin: 0 1.5rem;
                 text-decoration: none;
-                @include mixins.ff-fs-cl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
-                font-weight: 500;
-                transition: .3s;
-                &:hover{
-                    transform: scale(1.2);
-                    font-weight: 700;
-                }
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 150%;
             }
         }
     }
 
     #home {
-        max-width: 1040px;
-        @include mixins.margem-central(80%);
+        width: 1040px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        .textos-home {
+        .text-inner {
             width: 464px;
-
             h1 {
                 font-size: 42px;
-                color: variaveis.$cor-primaria;
+                color: $roxo-escuro;
                 margin-bottom: 2rem;
-                font-family: variaveis.$ft-titulos;
-
-                span {
-                    color: variaveis.$cor-secundaria;
-                }
+                font-family: $font-krona;
             }
-
-            .btn-main {
+            .btn-main{
                 width: 280px;
                 height: 66px;
                 color: #fff;
                 border: none;
                 outline: none;
                 border-radius: 66px;
-                background: variaveis.$cor-default;
+                background: $roxo-vibrante;
                 font-size: 1.3rem;
             }
         }
 
         .img-home {
-            max-width: 474px;
-
-            img {
-                width: 100%;
-            }
+            width: 474px;
         }
+
     }
 }
